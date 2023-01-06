@@ -1,3 +1,8 @@
+<script>
+ 
+</script>
+
+
 <template>
               <div class="md:order-2">
                 <a href="login.html"
@@ -13,11 +18,6 @@
             </div>
 </template>
 
-<script>
-export default {
-
-}
-</script>
 
 <style>
 

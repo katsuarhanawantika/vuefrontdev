@@ -1,4 +1,9 @@
 
+<script>
+ 
+ 
+</script>
+
 
 <template>
               <RouterLink to="/" class="flex items-center">
@@ -6,11 +11,7 @@
             </RouterLink>
 </template>
 
-<script>
-export default {
 
-}
-</script>
 
 <style>
 
