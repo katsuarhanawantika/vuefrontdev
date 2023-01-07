@@ -1,5 +1,5 @@
 <script setup>
-import itemsCard from '@/components/layouts/Homepage/itemsCard.vue'
+import ItemsCard from '@/components/layouts/Homepage/ItemsCard.vue'
 import { ref } from 'vue';
 
  
@@ -18,7 +18,7 @@ const itemss = ref([
       <h2 class="mb-4 text-xl font-medium md:mb-0 md:text-lg">New Items</h2>
       <div class="flex flex-wrap -mx-1 lg:-mx-4">
 
-        <itemsCard v-for="items in itemss" 
+        <ItemsCard v-for="items in itemss" 
         :key="items.id"
         :nama_items="items.nama_items"
         :caption_items="items.caption_items"
