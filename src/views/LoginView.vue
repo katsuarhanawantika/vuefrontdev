@@ -1,7 +1,7 @@
 
 <script setup>
  
-
+import { RouterLink } from 'vue-router';
  
   import LoginComponent from '@/components/Layouts/Authentication/LoginComponent.vue'
 </script>
@@ -20,9 +20,7 @@
               <LoginComponent/>
 
           </div>
-          <div class="w-full mx-auto mt-20 sm:max-w-2xl">
-            <img src="img/brand-logo.svg" alt="" class="w-full px-10 md:px-0" />
-          </div>
+      
         </div>
       </div>
     </div>
