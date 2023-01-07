@@ -2,6 +2,12 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
+import DetailsView from '../views/DetailsView.vue'
+import componenCoba from '../views/componenCoba.vue'
+import PricingView from '../views/PricingView.vue'
+import SuccessView from '../views/SuccessView.vue'
+
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,6 +27,29 @@ const router = createRouter({
       name: 'login',
       component: LoginView
     }, 
+    {
+      path: '/details/:id',
+      name: 'details',
+      component: DetailsView
+    }, 
+    {
+      path: '/coba',
+      name: 'componenCoba',
+      component: componenCoba
+    }, 
+    {
+      path: '/pricing',
+      name: 'PricingView',
+      component: PricingView
+    }, 
+    {
+      path: '/success',
+      name: 'SuccessView',
+      component: SuccessView
+    }, 
+
+
+    
     // {
     //   path: '/about',
     //   name: 'about',
