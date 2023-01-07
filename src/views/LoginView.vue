@@ -3,7 +3,7 @@
  
 import { RouterLink } from 'vue-router';
  
-  import LoginComponent from '@/components/Layouts/Authentication/LoginComponent.vue'
+  import LoginComponent from '@/components/Layouts/Authentication/LogComp.vue'
 </script>
 
 
