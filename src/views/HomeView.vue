@@ -10,7 +10,7 @@ import Items from '@/components/layouts/Homepage/Items.vue'
 
 <template>
  
-    <!-- <TheWelcome /> -->
+    <!-- tes kedua-->
 
     <Hero/>
     <Categories/>
