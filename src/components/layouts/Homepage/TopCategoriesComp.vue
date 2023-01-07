@@ -1,6 +1,6 @@
 
 <script setup>
- 
+
 defineProps({
   ncategories: String,
   jumlah: String,
@@ -19,7 +19,7 @@ defineProps({
                 <img
                   :alt="image"
                   class="block w-full h-auto"
-                  :src="'./src/assets/img/'+image"
+                  :src="'././src/assets/img/'+image"
                 />
               </div>
             </a>
