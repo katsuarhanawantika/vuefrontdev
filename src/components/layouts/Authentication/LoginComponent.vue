@@ -1,11 +1,50 @@
 <script setup>
-import { RouterLink } from "vue-router";
 import { ref } from "vue";
+import { useRouter, RouterLink } from "vue-router";
+import axios from "axios";
+
+// pinia
+import { mamamiaBoss } from "@/stores/mamamia";
+const mamamiaCilik = mamamiaBoss();
+// pinia
+
+// router
+const router = useRouter();
+// router
 
 const form = ref({
   email: "",
   password: "",
 });
+
+async function postLoginData() {
+  try {
+    const response = await axios.post(
+      "https://zullkit-backend.buildwithangga.id/api/login",
+      {
+        email: form.value.email,
+        password: form.value.password,
+      }
+    );
+
+    //local storage
+    localStorage.setItem("acc_token", response.data.data.access_token);
+    localStorage.setItem("typ_token", response.data.data.token_type);
+    //local storage
+
+    // router
+    router.push("/");
+    // router
+
+    // pinia
+    mamamiaCilik.fetchUser();
+    // pinia
+
+    // console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
 </script>
 
 <template>
@@ -13,7 +52,7 @@ const form = ref({
     <div class="mb-4">
       <label class="block mb-1" for="email">Email Address</label>
       <input
-        v-model="form.name"
+        v-model="form.email"
         placeholder="Type your email"
         id="email"
         type="text"
@@ -24,6 +63,7 @@ const form = ref({
     <div class="mb-4">
       <label class="block mb-1" for="password">Password</label>
       <input
+        @keyup.enter="postLoginData"
         v-model="form.password"
         placeholder="Type your password"
         id="password"
@@ -34,17 +74,19 @@ const form = ref({
     </div>
     <div class="mt-6">
       <button
+        @click="postLoginData"
         type="button"
         class="inline-flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-full hover:bg-indigo-700 md:py-2 md:text-lg md:px-10 hover:shadow"
       >
         Sign In
       </button>
-      <button
+      <RouterLink
+        to="/register"
         type="button"
         class="inline-flex items-center justify-center w-full px-8 py-3 mt-2 text-base font-medium text-black bg-gray-200 border border-transparent rounded-full hover:bg-gray-300 md:py-2 md:text-lg md:px-10 hover:shadow"
       >
         Create New Account
-      </button>
+      </RouterLink>
     </div>
   </form>
 </template>

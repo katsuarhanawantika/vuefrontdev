@@ -1,4 +1,4 @@
-<script></script>
+<script setup></script>
 
 <template>
   <div
@@ -11,37 +11,32 @@
       <li>
         <RouterLink
           to="/"
-          class="block py-2 pl-3 pr-4 text-white bg-indigo-600 rounded md:bg-transparent md:text-indigo-600 md:p-0 dark:text-white"
+          class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-indigo-600 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
           aria-current="page"
           >Home</RouterLink
         >
       </li>
       <li>
         <RouterLink
-          to="/categories"
+          to="/all-categories"
           class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-indigo-600 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-        >
-          Categories</RouterLink
+          >Categories</RouterLink
         >
       </li>
       <li>
         <RouterLink
           to="/pricing"
           class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-indigo-600 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-        >
-          Pricing</RouterLink
+          >Pricing</RouterLink
         >
       </li>
       <li>
-        <RouterLink
-          to="#"
+        <a
+          href="#"
           class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-indigo-600 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-        >
-          Study Case</RouterLink
+          >Study Case</a
         >
       </li>
     </ul>
   </div>
 </template>
-
-<style></style>

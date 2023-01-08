@@ -1,8 +1,24 @@
 <script setup>
+import { onMounted, computed } from "vue";
+// pinia
+import { mamamiaBoss } from "@/stores/mamamia";
+// pinia
+
 import Logo from "@/components/layouts/NavbarItems/Logo.vue";
 import NavigationLinks from "@/components/layouts/NavbarItems/NavigationLinks.vue";
 import AuthButton from "@/components/layouts/Authentication/AuthButton.vue";
-// import UserInfo from "@/components/layouts/NavbarItems/UserInfo.vue";
+import UserInfo from "@/components/layouts/NavbarItems/UserInfo.vue";
+
+// pinia
+const mamamiA = mamamiaBoss();
+const user = computed(() => mamamiA.getUser);
+const isLoggedIn = computed(() => mamamiA.isLoggedIn);
+
+onMounted(() => {
+  mamamiA.fetchUser();
+});
+
+// pinia
 </script>
 
 <template>
@@ -10,8 +26,8 @@ import AuthButton from "@/components/layouts/Authentication/AuthButton.vue";
     <div class="container flex flex-wrap items-center justify-between mx-auto my-2">
       <Logo />
       <NavigationLinks />
-      <!-- <UserInfo /> -->
-      <AuthButton />
+      <UserInfo v-if="isLoggedIn" :userDataProfile="user.data" />
+      <AuthButton v-else />
     </div>
   </nav>
 </template>

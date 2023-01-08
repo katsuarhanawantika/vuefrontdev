@@ -1,10 +1,46 @@
 <script setup>
+import { useRouter, RouterLink } from "vue-router";
 import { ref } from "vue";
+import axios from "axios";
+// pinia
+import { mamamiaBoss } from "@/stores/mamamia";
+const mamamiaCilik = mamamiaBoss();
+// pinia
 const form = ref({
   name: "",
   email: "",
   password: "",
+  title: "Member",
 });
+// router
+const router = useRouter();
+// router
+async function postRegisterData() {
+  try {
+    const response = await axios.post(
+      "https://zullkit-backend.buildwithangga.id/api/register",
+      {
+        name: form.value.name,
+        email: form.value.email,
+        password: form.value.password,
+        title: form.value.title,
+      }
+    );
+
+    localStorage.setItem("acc_token", response.data.data.access_token);
+    localStorage.setItem("typ_token", response.data.data.token_type);
+    // router
+    router.push("/");
+    // router
+
+    // pinia
+    mamamiaCilik.fetchUser();
+    // pinia
+    // console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
 </script>
 
 <template>
@@ -13,7 +49,7 @@ const form = ref({
       <div class="mb-4">
         <label class="block mb-1" for="name">Name</label>
         <input
-        v-model="form.name"
+          v-model="form.name"
           placeholder="Type your full name"
           id="name"
           type="text"
@@ -36,7 +72,8 @@ const form = ref({
       <div class="mb-4">
         <label class="block mb-1" for="password">Password</label>
         <input
-          v-model="form.passwords"
+          @keyup.enter="postRegisterData"
+          v-model="form.password"
           placeholder="Type your password"
           id="password"
           type="password"
@@ -46,14 +83,14 @@ const form = ref({
       </div>
       <div class="mt-6">
         <button
-          
+          @click="postRegisterData"
           type="button"
           class="inline-flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-full hover:bg-indigo-700 md:py-2 md:text-lg md:px-10 hover:shadow"
         >
-        Continue Sign Up
+          Continue Sign Up
         </button>
         <RouterLink
-          to="/register"
+          to="/login"
           type="button"
           class="inline-flex items-center justify-center w-full px-8 py-3 mt-2 text-base font-medium text-black bg-gray-200 border border-transparent rounded-full hover:bg-gray-300 md:py-2 md:text-lg md:px-10 hover:shadow"
         >
