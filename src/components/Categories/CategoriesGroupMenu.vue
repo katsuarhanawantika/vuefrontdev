@@ -24,17 +24,18 @@ onMounted(() => {
 // tuAPI
 </script>
 
-//
+// //
 <script>
-export default {
-  data: () => ({ selected: "" }),
-  methods: {
-    switchSelect(event) {
-      alert(this.selected);
-      this.selected = event.target.value;
-    },
-  },
-};
+// export default {
+//   data: () => ({ selected: "" }),
+//   methods: {
+//     switchSelect(event) {
+//       alert(this.selected);
+//       this.selected = event.target.value;
+//     },
+//   },
+// };
+//
 </script>
 
 <template>
@@ -51,7 +52,7 @@ export default {
       />
     </div>
 
-    <h1>testAPI</h1>
+    <!-- <h1>testAPI</h1>
 
     <br />
 
@@ -68,7 +69,7 @@ export default {
       </option>
     </select>
     <br />
-    <br />
+    <br /> -->
   </div>
 </template>
 
