@@ -6,7 +6,7 @@ import DetailsView from '../views/DetailsView.vue'
 import componenCoba from '../views/componenCoba.vue'
 import PricingView from '../views/PricingView.vue'
 import SuccessView from '../views/SuccessView.vue'
-import AllcategoryView from '../views/AllcategoryView.vue'
+import AllcategoryView from '../views/AllCategoryView.vue'
 import CategoriesToItemView from '../views/CategoriesToItemView.vue'
 
 
