@@ -74,8 +74,8 @@ onMounted(() => {
 </template>
 
 <style scoped>
-#catrogi {
+/* #catrogi {
   padding: 9px;
   width: 20%;
-}
+} */
 </style>
